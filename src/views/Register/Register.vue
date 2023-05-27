@@ -14,41 +14,42 @@
 
       <div class="login-content">
         <div style="margin-left: -50px;">
-          <el-form label-width="100px" :model="formLabelAlign">
-            <el-form-item>
+          <el-form label-width="100px" :model="formLabelAlign" :rules="rules" ref="formLabelAlign">
+            <el-form-item prop="email">
               <span slot="label">
                 <span style="color: white"><strong>邮箱</strong></span>
               </span>
-              <el-input v-model="formLabelAlign.region" placeholder="邮箱"></el-input>
+              <el-input type="email" v-model="formLabelAlign.email" placeholder="邮箱"></el-input>
             </el-form-item>
-            <el-form-item>
+            <el-form-item prop="password">
               <span slot="label">
                 <span style="color: white"><strong>密码</strong></span>
               </span>
-              <el-input v-model="formLabelAlign.password" placeholder="密码"></el-input>
+              <el-input type="password" v-model="formLabelAlign.password" placeholder="密码"></el-input>
             </el-form-item>
-            <el-form-item>
+            <el-form-item prop="passwordCheck">
               <span slot="label">
                 <span style="color: white"><strong>确认密码</strong></span>
               </span>
-              <el-input v-model="formLabelAlign.test" placeholder="确认密码"></el-input>
+              <el-input type="password" v-model="formLabelAlign.Check" placeholder="确认密码"></el-input>
             </el-form-item>
-            <el-form-item>
-              <span slot="label">
-                <span style="color: white"><strong>邮箱验证码</strong></span>
-              </span>
-              <el-input v-model="formLabelAlign.test" placeholder="邮箱验证码"></el-input>
-            </el-form-item>
-            <el-form-item style="width: 310px;position: relative;">
+            <el-form-item style="width: 310px;position: relative;" prop="test">
               <span slot="label">
                 <span style="color: white"><strong>验证码</strong></span>
               </span>
               <el-input v-model="formLabelAlign.test" placeholder="验证码"></el-input>
               <div class="test-img"><img src="" alt=""></div>
             </el-form-item>
+            <el-form-item style="width: 310px" prop="emailtest">
+              <span slot="label">
+                <span style="color: white"><strong>邮箱验证码</strong></span>
+              </span>
+              <el-input v-model="formLabelAlign.emailtest" placeholder="邮箱验证码"></el-input>
+              <el-button class="test-button" type="primary" disabled><span style="margin-left: -5px;">获取验证码</span></el-button>
+            </el-form-item>
 
             <div class="login-button" style="margin: auto;">
-              <el-button plain style="position: absolute;top: 15px;left: 190px;width:150px">注册</el-button>
+              <el-button plain style="position: absolute;top: 15px;left: 200px;width:150px" @click="submitForm('formLabelAlign')">注册</el-button>
             </div>
 
           </el-form>
@@ -67,14 +68,78 @@
 export default {
   name: 'Register',
   data() {
+    var validatePass2 = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('请再次输入密码'))
+      } else if (value !== this.ruleForm.password) {
+        callback(new Error('两次输入密码不一致!'))
+      } else {
+        callback()
+      }
+    }
+    var validateTest = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('请输入验证码'))
+      } else if (value !== this.test) {
+        callback(new Error('验证码错误!'))
+      } else {
+        callback()
+      }
+    }
+    var validateEmailTest = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('请输入邮箱验证码'))
+      } else if (value !== this.emailTest) {
+        callback(new Error('邮箱验证码错误!'))
+      } else {
+        callback()
+      }
+    }
     return {
       labelPosition: 'right',
+      test: '1',
+      emailTest: '1',
       formLabelAlign: {
-        region: '',
+        email: '',
         password: '',
+        passwordCheck: '',
         test: '',
+        emailtest: '',
+      },
+      rules: {
+        email: [
+          { required: true, message: '请输入邮箱', trigger: 'blur' },
+          { type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur' },
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          {
+            min: 6,
+            max: 20,
+            message: '密码长度在6到20个字符',
+            trigger: 'blur',
+          },
+        ],
+        passwordCheck: [
+          { required: true, validator: validatePass2, trigger: 'blur' },
+        ],
+        test: [{ required: true, validator: validateTest, trigger: 'blur' }],
+        emailtest: [
+          { required: true, validator: validateEmailTest, trigger: 'blur' },
+        ],
       },
     }
+  },
+  methods: {
+    submitForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
   },
 }
 </script>
@@ -95,8 +160,7 @@ a {
 /* 整体框架 */
 .content {
   width: 100%;
-  background: url(https://www.dpm.org.cn/Public/static/themes/image/bo/bg17.jpg)
-    no-repeat;
+  background: url(./images/login.jpeg) center center/cover no-repeat;
   /* background-color: gray; */
 }
 
@@ -182,6 +246,14 @@ a {
     right: -159px;
     width: 100px;
     background-color: #888888;
+  }
+  .test-button {
+    position: absolute;
+    top: 0;
+    right: -159px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
   }
   .login-button {
     position: relative;

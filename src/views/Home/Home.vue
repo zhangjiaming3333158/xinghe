@@ -6,8 +6,6 @@
         <div class="box1_1_1">
           <div class="box1_1_1_left">
             <div class="box1_1_1_left_top" style="color: white;">
-              <!-- <h1 style="color: aliceblue;">星禾·资讯</h1>
-              <span style="float: right;padding: 10px 20px 0 0;">更多</span> -->
 
               <h1 style="position: relative; float: left;">
                 <span><img style="width: 24px; height: 36px;position: absolute;top: 3px;left:-20px" src="https://img.dpm.org.cn/Public/static/themes/image/public-icon1.png"></span>
@@ -20,12 +18,69 @@
             </div>
             <hr />
             <ul class="box1_1_1_left_bottom" style="font-size: 20px;">
-              <li class="el-icon-info"> 1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
-              <li class="el-icon-info"> 2</li>
-              <li class="el-icon-info"> 3</li>
-              <li class="el-icon-info"> 4</li>
-              <li class="el-icon-info"> 5</li>
-              <li class="el-icon-info"> 6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
+              <div class="top">
+                <li>
+                  <em><img style="width: 17px;height: 14px;" src="https://img.dpm.org.cn/Public/static/themes/image/lyc/index-icon2-1.png"></em>
+                  <span>中国传统服饰元素在服装设计中的应用意义初探一陆玉叶</span>
+                </li>
+                <li>
+                  <em><img style="width: 17px;height: 14px;" src="https://img.dpm.org.cn/Public/static/themes/image/lyc/index-icon2-1.png"></em>
+                  <span>传统服饰文化对中国现代服饰文化的影响分析-骆浩</span>
+                </li>
+                <li>
+                  <em><img style="width: 17px;height: 14px;" src="https://img.dpm.org.cn/Public/static/themes/image/lyc/index-icon2-1.png"></em>
+                  <span>中国传统服饰元素在现代服装设计中的应用研究一泰上舒</span>
+                </li>
+              </div>
+              <div class="middle" style="width: 100%;border-bottom:1px solid wheat ;"></div>
+              <div class="bottom">
+                <div class="bottom-left">
+                  <li>
+                    <i class="el-icon-top" style="color:white"></i>
+                    <span>中国民族服饰发展超势探究-《美与时代》尹志红 03/20</span>
+                  </li>
+                  <li>
+                    <i class="el-icon-top" style="color:white"></i>
+                    <span>我国少数民族服饰文化的传承与保护-评《中国....02/23</span>
+                  </li>
+                  <li>
+                    <i class="el-icon-top" style="color:white"></i>
+                    <span>现代服装设计中中国传统服饰元素的应用-刘心宽 02/14</span>
+                  </li>
+                  <li>
+                    <i class="el-icon-collection-tag" style="color:white"></i>
+                    <span>关于民族服饰变装热潮的可行与原因分析新04 / 07</span>
+                  </li>
+                  <li>
+                    <i class="el-icon-collection-tag" style="color:white"></i>
+                    <span>少数民族服饰图案在现代服饰设计中的应用04/ 04</span>
+                  </li>
+                  <li>
+                    <i class="el-icon-collection-tag" style="color:white"></i>
+                    <span>对满族民族服饰图案的文化寓意探讨与研究04 /03</span>
+                  </li>
+                </div>
+                <div class="bottom-right">
+                  <li>
+                    <span><em style="font-size: 20px;">03</em>/20</span>
+                  </li>
+                  <li>
+                    <span><em style="font-size: 20px;">02</em>/23</span>
+                  </li>
+                  <li>
+                    <span><em style="font-size: 20px;">02</em>/24</span>
+                  </li>
+                  <li>
+                    <span><em style="font-size: 20px;">04</em>/07</span>
+                  </li>
+                  <li>
+                    <span><em style="font-size: 20px;">04</em>/04</span>
+                  </li>
+                  <li>
+                    <span><em style="font-size: 20px;">04</em>/03</span>
+                  </li>
+                </div>
+              </div>
             </ul>
             <br />
           </div>
@@ -33,8 +88,8 @@
             <img src="./img/box1_1_1_img.png" alt="" class="box1_1_1_img">
           </div>
         </div>
-        <div class="box1_1_2">
-          img
+        <div>
+          <img class="box1_1_2" src="@/views/Home/img/box1_1_2.png" alt="">
         </div>
       </div>
       <div class="box1_2">
@@ -67,9 +122,8 @@
           <div class="box1_2_1_bottom">
             <div class="ll" style="position: relative;">
               <div class="div">
-                <div class="icon">
-                  <img src="https://img.dpm.org.cn/Uploads/Picture/2022/07/09/s62c8907ac25c7.png" alt="" class="i" style="position: absolute;top:20px;left: 50px;">
-                </div>
+                <div class="icon"></div>
+                <img src="@/views/Home/img/3d.png" alt="" class="i" style="position: absolute;top:50px;left: 82px;width: 75px;height: 75px;">
               </div>
               <div style="position:absolute;top: 140px;left: 54px;text-align: center;">
                 <div class="p" style="font-size: 14px;">咨询电话</div>
@@ -80,36 +134,31 @@
             <div class="rr">
               <div class="li" style="float: left;">
                 <div class="icon">
-                  <img style="width: 40px;height: 52px;" src="https://img.dpm.org.cn/Uploads/Picture/2022/07/09/s62c890d64b7f9.png" alt="" class="i">
+                  <img style="width: 54px;height: 67px;" src="@/views/Home/img/traver.png" alt="" class="i">
                 </div>
-                <div class="t">交通路线</div>
               </div>
               <div class="li" style="float: left;">
                 <div class="icon">
-                  <img style="width: 52px;height: 45px;" src="https://img.dpm.org.cn/Uploads/Picture/2022/07/09/s62c890f2c1476.png" alt="" class="i">
+                  <img style="width: 52px;height: 50px;" src="https://img.dpm.org.cn/Uploads/Picture/2022/07/09/s62c890f2c1476.png" alt="" class="i">
                 </div>
                 <div class="t">游览须知</div>
               </div>
               <div class="li" style="float: left;">
                 <div class="icon">
-                  <img style="width: 52px;height: 45px;" src="https://img.dpm.org.cn/Uploads/Picture/2022/07/09/s62c89101949fc.png" alt="" class="i">
+                  <img style="width: 54px;height: 63px;" src="@/views/Home/img/history.png" alt="" class="i">
                 </div>
-                <div class="t">导览地图</div>
               </div>
               <div class="li" style="float: left;">
                 <div class="icon">
                   <img style="width: 52px;height: 45px;" src="https://img.dpm.org.cn/Uploads/Picture/2022/07/09/s62c89110b6220.png" alt="" class="i">
                 </div>
-                <div class="t">全景故宫</div>
+                <div class="t">全景星禾</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="box1_1_1_left">
+        <div class="box1_2_2">
           <div class="box1_1_1_left_top" style="color: white;">
-            <!-- <h1 style="color: aliceblue;">星禾·资讯</h1>
-              <span style="float: right;padding: 10px 20px 0 0;">更多</span> -->
-
             <h1 style="position: relative; float: left;">
               <span><img style="width: 24px; height: 36px;position: absolute;top: 3px;left:-20px" src="https://img.dpm.org.cn/Public/static/themes/image/public-icon1.png"></span>
               <span style="margin:0 15px 0 5px; font-size: 30px;line-height: 40px;">开放</span>·
@@ -121,11 +170,54 @@
           </div>
           <hr />
           <ul class="box1_1_1_left_bottom" style="font-size: 20px;">
-            <li>· 1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
-            <li>· 2</li>
-            <li>· 3</li>
-            <li>· 4</li>
-            <li>· 5</li>
+            <div class="top">
+              <li>
+                <em><img style="width: 17px;height: 14px;" src="https://img.dpm.org.cn/Public/static/themes/image/lyc/index-icon2-1.png"></em>
+                <span>新苗族系列元素春季上新</span>
+              </li>
+            </div>
+            <div class="middle" style="width: 100%;border-bottom:1px solid wheat ;"></div>
+            <div class="bottom">
+              <div class="bottom-left">
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>2月25日星禾不停机更新公告</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>系统更新期间不稳定通告，西北展区稳定运行</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>商用端口会员制设立通告与商业合作公告</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>客户端定制实现与寄送流程说明</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>星禾正式设立时间与历程一览</span>
+                </li>
+              </div>
+              <div class="bottom-right">
+                <li>
+                  <span>2023 / 02 / 25</span>
+                </li>
+                <li>
+                  <span>2023 / 02 / 25</span>
+                </li>
+                <li>
+                  <span>2023 / 01 / 28</span>
+                </li>
+                <li>
+                  <span>2022 / 12 / 28</span>
+                </li>
+                <li>
+                  <span>2022 / 12 / 05</span>
+                </li>
+              </div>
+            </div>
           </ul>
           <br />
         </div>
@@ -133,31 +225,30 @@
     </div>
     <div class="box2 w">
       <div class="box2_1">
-        <div class="box1_1_1_left">
+        <!-- <div class="box1_1_1_left">
           <div class="box1_1_1_left_top" style="color: white;">
             <h1 style="position: relative; float: left;">
               <span><img style="width: 24px; height: 36px;position: absolute;top: 3px;left:-20px" src="https://img.dpm.org.cn/Public/static/themes/image/public-icon1.png"></span>
-              <span style="margin:0 15px 0 30px; font-size: 30px;line-height: 40px;">开放</span>·
-              <span style="margin:0 5px 0 15px; font-size: 30px;">公告</span>
+              <span style="margin:0 15px 0 30px; font-size: 30px;line-height: 40px;">星禾</span>·
+              <span style="margin:0 5px 0 15px; font-size: 30px;">藏品</span>
               <span class="tit-span"><img style="width: 24px; height: 36px;position: absolute;top: 3px;left:215px" src="https://img.dpm.org.cn/Public/static/themes/image/public-icon2.png"></span>
             </h1>
           </div>
-          <div class='icon'><img src="	https://img.dpm.org.cn/Public/static/themes/image/lyc/home_line.png"></div>
+          <div class='icon'><img src="https://img.dpm.org.cn/Public/static/themes/image/lyc/home_line.png"></div>
           <h1 style="color:white;font-size: 30px;text-align: center;">1,863,404 件</h1>
           <div style="color:white;font-size: 20px;text-align: center;margin-top: 30px;"><el-button plain>藏品总目</el-button></div>
           <div style="color:white;font-size: 20px;text-align: center;margin-top: 30px;"><el-button plain>文化库</el-button></div>
+        </div> -->
+
+        <div class="box1_1_1_left">
+          <img src="./img/box2_1.jpeg" alt="">
         </div>
       </div>
       <div class="box2_2">
-        <div class="box2_2_img">
-          <img src="./img/box2_2_img1.jpeg" alt="" class="box2_2_img">
-        </div>
-        <div class="box2_2_img">
-          <img src="./img/box2_2_img2.jpeg" alt="" class="box2_2_img">
-        </div>
-        <div class="box2_2_img">
-          <img src="./img/box2_2_img3.jpeg" alt="" class="box2_2_img">
-        </div>
+        <span class="span_middle">PREVIEW</span>
+        <span class="span_middle2">1,071件</span>
+        <img class="img_middle" src="./img/box2_1_middle.jpeg" alt="">
+        <img class="img_right" src="./img/box2_1_right.jpeg" alt="">
       </div>
     </div>
     <div class="box3 w">
@@ -169,7 +260,7 @@
           <h1 style="position: relative; float: left;">
             <span><img style="width: 24px; height: 36px;position: absolute;top: 3px;left:-20px" src="https://img.dpm.org.cn/Public/static/themes/image/public-icon1.png"></span>
             <span style="margin:0 15px 0 5px; font-size: 30px;line-height: 40px;">星禾</span>·
-            <span style="margin:0 5px 0 15px; font-size: 30px;">资讯</span>
+            <span style="margin:0 5px 0 15px; font-size: 30px;">活动</span>
             <span class="tit-span"><img style="width: 24px; height: 36px;position: absolute;top: 3px;left:170px" src="https://img.dpm.org.cn/Public/static/themes/image/public-icon2.png"></span>
           </h1>
           <span class="more" style="position: relative;;float: right;"><i style="position: absolute;right: 28px;">更多</i><img style="position: absolute;right: 10px;" src="https://img.dpm.org.cn/Public/static/themes/image/more.png"></span>
@@ -177,11 +268,46 @@
         </div>
         <hr />
         <ul class="box1_1_1_left_bottom" style="font-size: 20px;">
-          <li class="el-icon-info"> 1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
-          <li class="el-icon-info"> 2</li>
-          <li class="el-icon-info"> 3</li>
-          <li class="el-icon-info"> 4</li>
-          <li class="el-icon-info"> 5</li>
+          <div class="bottom">
+            <div class="bottom-left">
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>关于民族服饰变装热潮的可行与原因分析新04 / 07</span>
+              </li>
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>少数民族服饰图案在现代服饰设计中的应用04/ 04</span>
+              </li>
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>对满族民族服饰图案的文化寓意探讨与研究04 /03</span>
+              </li>
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>关于民族服饰变装热潮的可行与原因分析新04 / 07</span>
+              </li>
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>少数民族服饰图案在现代服饰设计中的应用04/ 04</span>
+              </li>
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>对满族民族服饰图案的文化寓意探讨与研究04 /03</span>
+              </li>
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>关于民族服饰变装热潮的可行与原因分析新04 / 07</span>
+              </li>
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>少数民族服饰图案在现代服饰设计中的应用04/ 04</span>
+              </li>
+              <li>
+                <i class="el-icon-collection-tag" style="color:white"></i>
+                <span>对满族民族服饰图案的文化寓意探讨与研究04 /03</span>
+              </li>
+            </div>
+          </div>
         </ul>
         <br />
       </div>
@@ -193,8 +319,8 @@
 
             <h1 style="position: relative; float: left;">
               <span><img style="width: 24px; height: 36px;position: absolute;top: 3px;left:-20px" src="https://img.dpm.org.cn/Public/static/themes/image/public-icon1.png"></span>
-              <span style="margin:0 15px 0 5px; font-size: 30px;line-height: 40px;">星禾</span>·
-              <span style="margin:0 5px 0 15px; font-size: 30px;">资讯</span>
+              <span style="margin:0 15px 0 5px; font-size: 30px;line-height: 40px;">学术</span>·
+              <span style="margin:0 5px 0 15px; font-size: 30px;">研究</span>
               <span class="tit-span"><img style="width: 24px; height: 36px;position: absolute;top: 3px;left:170px" src="https://img.dpm.org.cn/Public/static/themes/image/public-icon2.png"></span>
             </h1>
             <span class="more" style="position: relative;;float: right;"><i style="position: absolute;right: 28px;">更多</i><img style="position: absolute;right: 10px;" src="https://img.dpm.org.cn/Public/static/themes/image/more.png"></span>
@@ -202,17 +328,52 @@
           </div>
           <hr />
           <ul class="box1_1_1_left_bottom" style="font-size: 20px;">
-            <li class="el-icon-info"> 1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</li>
-            <li class="el-icon-info"> 2</li>
-            <li class="el-icon-info"> 3</li>
-            <li class="el-icon-info"> 4</li>
-            <li class="el-icon-info"> 5</li>
+            <div class="bottom">
+              <div class="bottom-left">
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>关于民族服饰变装热潮的可行与原因分析新04 / 07</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>少数民族服饰图案在现代服饰设计中的应用04/ 04</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>对满族民族服饰图案的文化寓意探讨与研究04 /03</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>关于民族服饰变装热潮的可行与原因分析新04 / 07</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>少数民族服饰图案在现代服饰设计中的应用04/ 04</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>对满族民族服饰图案的文化寓意探讨与研究04 /03</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>关于民族服饰变装热潮的可行与原因分析新04 / 07</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>少数民族服饰图案在现代服饰设计中的应用04/ 04</span>
+                </li>
+                <li>
+                  <i class="el-icon-collection-tag" style="color:white"></i>
+                  <span>对满族民族服饰图案的文化寓意探讨与研究04 /03</span>
+                </li>
+              </div>
+            </div>
           </ul>
           <br />
         </div>
         <div class="box3_2_right">
-          <div class="box3_2_right_top">img</div>
-          <div class="box3_2_right_bottom">img</div>
+          <img style="border-radius: 10px;" src="@/views/Home/img/box3_2_right_top.jpeg" alt="" class="box3_2_right_top">
+          <img style="border-radius: 10px;" src="@/views/Home/img/box3_2_right_bottom.jpeg" alt="" class="box3_2_right_bottom">
         </div>
       </div>
     </div>
@@ -242,42 +403,85 @@ export default {
   .box1 {
     height: 815px;
     margin-top: 25px;
-    // background-color: black;
     .box1_1 {
       float: left;
-      width: 760px;
+      width: 805px;
       height: 790px;
       .box1_1_1 {
         margin-bottom: 25px;
-        width: 760px;
+        width: 800px;
         height: 395px;
         .box1_1_1_left {
           float: left;
           box-sizing: border-box;
-          width: 450px;
+          width: 490px;
           height: 395px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
           background: url(https://img.dpm.org.cn/Public/static/themes/image/home_block1_news_bg.jpg);
           .box1_1_1_left_top {
             padding: 30px 0 0 50px;
-            width: 400px;
+            width: 420px;
             height: 40px;
             line-height: 25px;
             border-radius: 10px 0 0 0;
-            // background-color: yellow;
           }
           .box1_1_1_left_bottom {
-            padding: 30px 0 0 50px;
-            width: 360px;
+            padding: 15px 0 0 50px;
+            width: 380px;
             height: 250px;
-            // background-color: yellow;
-            li {
-              color: white;
-              display: block;
-              height: 40px;
-              line-height: 40px;
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
+            .top {
+              width: 100%;
+              margin-bottom: 20px;
+              li {
+                color: white;
+                display: block;
+                height: 30px;
+                line-height: 40px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 14px;
+                span {
+                  padding-left: 10px;
+                }
+              }
+            }
+            .bottom {
+              .bottom-left {
+                float: left;
+                width: 80%;
+                height: 100%;
+                li {
+                  color: white;
+                  display: block;
+                  height: 30px;
+                  line-height: 40px;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-size: 14px;
+                  span {
+                    padding-left: 10px;
+                  }
+                }
+              }
+              .bottom-right {
+                float: left;
+                width: 20%;
+                height: 100%;
+                li {
+                  color: white;
+                  display: block;
+                  margin-left: 20px;
+                  height: 30px;
+                  line-height: 40px;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-size: 14px;
+                }
+              }
             }
           }
         }
@@ -285,13 +489,14 @@ export default {
           float: left;
           width: 310px;
           height: 395px;
-          border-radius: 0 5px 5px 0;
+          border-radius: 0 10px 10px 0;
         }
       }
       .box1_1_2 {
-        width: 760px;
-        height: 370px;
-        background-color: green;
+        margin-top: -20px;
+        width: 800px;
+        height: 390px;
+        border-radius: 10px;
       }
     }
     .box1_2 {
@@ -310,6 +515,8 @@ export default {
           padding: 20px;
           width: 520px;
           height: 200px;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
           background: url(https://img.dpm.org.cn/Public/static/themes/image/png5.png);
         }
         .box1_2_1_bottom {
@@ -324,7 +531,16 @@ export default {
             width: 240px;
             height: 100%;
             color: #fff;
-            // background-color: red;
+            border-right: 1px solid #526985;
+            .icon {
+              position: absolute;
+              top: 37px;
+              left: 68px;
+              width: 100px;
+              height: 100px;
+              border-radius: 10px;
+              background-color: #29374b;
+            }
           }
           .rr {
             float: left;
@@ -342,11 +558,12 @@ export default {
           }
         }
       }
-      .box1_1_1_left {
+      .box1_2_2 {
         float: left;
         box-sizing: border-box;
         width: 520px;
         height: 330px;
+        border-radius: 10px;
         background: url(https://img.dpm.org.cn/Public/static/themes/image/home_block1_news_bg.jpg);
         .box1_1_1_left_top {
           padding: 30px 0 0 50px;
@@ -354,21 +571,63 @@ export default {
           height: 40px;
           line-height: 25px;
           border-radius: 10px 0 0 0;
-          // background-color: yellow;
         }
         .box1_1_1_left_bottom {
-          padding: 30px 0 0 50px;
-          width: 360px;
+          padding: 15px 0 0 50px;
+          width: 420px;
           height: 250px;
-          // background-color: yellow;
-          li {
-            color: white;
-            display: block;
-            height: 40px;
-            line-height: 40px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+          .top {
+            width: 100%;
+            margin-bottom: 20px;
+            li {
+              color: white;
+              display: block;
+              height: 30px;
+              line-height: 40px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-size: 14px;
+              span {
+                padding-left: 10px;
+              }
+            }
+          }
+          .bottom {
+            .bottom-left {
+              float: left;
+              width: 70%;
+              height: 100%;
+              li {
+                color: white;
+                display: block;
+                height: 30px;
+                line-height: 40px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 14px;
+                span {
+                  padding-left: 10px;
+                }
+              }
+            }
+            .bottom-right {
+              float: left;
+              width: 30%;
+              height: 100%;
+              li {
+                color: white;
+                display: block;
+                margin-left: 20px;
+                height: 30px;
+                line-height: 40px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 14px;
+              }
+            }
           }
         }
       }
@@ -378,60 +637,56 @@ export default {
     height: 445px;
     .box2_1 {
       float: left;
-      width: 320px;
+      width: 431px;
       height: 420px;
-      background: url(https://img.dpm.org.cn/Public/static/themes/image/home_block2_box_bg1920.jpg);
+      border-radius: 10px;
       .box1_1_1_left {
+        position: relative;
         float: left;
         box-sizing: border-box;
-        width: 320px;
+        width: 431px;
         height: 420px;
-        .icon {
-          margin-top: 30px;
-          margin-bottom: 30px;
+        img {
+          border-radius: 10px;
           width: 100%;
-          text-align: center;
-          line-height: 50px;
-        }
-        .box1_1_1_left_top {
-          padding: 30px 0 0 50px;
-          width: 400px;
-          height: 40px;
-          line-height: 25px;
-          border-radius: 10px 0 0 0;
-          // background-color: yellow;
-        }
-        .box1_1_1_left_bottom {
-          padding: 30px 0 0 50px;
-          width: 360px;
-          height: 250px;
-          // background-color: yellow;
-          li {
-            color: white;
-            display: block;
-            height: 40px;
-            line-height: 40px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
+          height: 100%;
         }
       }
     }
     .box2_2 {
+      position: relative;
       float: left;
       flex: 3;
-      margin-left: 25px;
-      width: 1005px;
+      margin-left: 30px;
+      width: 889px;
       height: 420px;
-
-      .box2_2_img {
+      border-radius: 10px;
+      .img_middle {
+        border-radius: 10px;
         float: left;
-        width: 335px;
+        margin-right: 30px;
+        width: 653px;
         height: 420px;
-        // background: url('') no-repeat;
-        // background-size: cover;
-        background-color: green;
+      }
+      .img_right {
+        border-radius: 10px;
+        float: left;
+        width: 206px;
+        height: 420px;
+      }
+      .span_middle {
+        position: absolute;
+        top: 234px;
+        left: 273px;
+        font-size: 26px;
+        color: #fff;
+      }
+      .span_middle2 {
+        position: absolute;
+        top: 284px;
+        left: 285px;
+        font-size: 26px;
+        color: #fff;
       }
     }
   }
@@ -442,6 +697,7 @@ export default {
       box-sizing: border-box;
       width: 450px;
       height: 420px;
+      border-radius: 10px;
       background: url(https://img.dpm.org.cn/Public/static/themes/image/home_block1_news_bg.jpg);
       .box1_1_1_left_top {
         padding: 30px 0 0 50px;
@@ -452,18 +708,47 @@ export default {
         // background-color: yellow;
       }
       .box1_1_1_left_bottom {
-        padding: 30px 0 0 50px;
+        padding: 15px 0 0 50px;
         width: 360px;
         height: 250px;
         // background-color: yellow;
-        li {
-          color: white;
-          display: block;
-          height: 40px;
-          line-height: 40px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
+        .top {
+          height: 80px;
+          width: 100%;
+          margin-bottom: 20px;
+          li {
+            color: white;
+            display: block;
+            height: 30px;
+            line-height: 40px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 14px;
+            span {
+              padding-left: 10px;
+            }
+          }
+        }
+        .bottom {
+          .bottom-left {
+            float: left;
+            width: 90%;
+            height: 100%;
+            li {
+              color: white;
+              display: block;
+              height: 30px;
+              line-height: 40px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-size: 14px;
+              span {
+                padding-left: 10px;
+              }
+            }
+          }
         }
       }
     }
@@ -478,9 +763,7 @@ export default {
         margin-left: 2px;
         width: 423px;
         height: 420px;
-        // background-color: yellow;
         .box3_2_right_top {
-          // float: left;
           margin-bottom: 1px;
           width: 424px;
           height: 209px;

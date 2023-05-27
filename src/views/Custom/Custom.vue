@@ -14,7 +14,7 @@
         <el-button icon="el-icon-arrow-right" circle style="position: absolute;top: 20px;left: 900px;"></el-button>
       </div>
       <div class="mesh-list" ref="mesh">
-        <el-button round style="width: 150px;color: black;font-size: 16px;">贴图1</el-button>
+        <el-button round style="width: 150px;color: black;font-size: 16px;" @click="meshloader">贴图1</el-button>
         <el-button round style="width: 150px;color: black;font-size: 16px;">贴图2</el-button>
         <el-button round style="width: 150px;color: black;font-size: 16px;">贴图3</el-button>
         <el-button round style="width: 150px;color: black;font-size: 16px;">贴图4</el-button>
@@ -41,12 +41,24 @@ export default {
   mounted() {
     let scene = new Scene()
     // AxesHelper：辅助观察的坐标系
-    const axesHelper = new THREE.AxesHelper(150)
-    scene.add(axesHelper)
+    // const axesHelper = new THREE.AxesHelper(150)
+    // scene.add(axesHelper)
+    const textureCube = new THREE.CubeTextureLoader()
+      .setPath('/img/')
+      .load(['background.png'])
+    new THREE.MeshStandardMaterial({
+      metalness: 1.0,
+      roughness: 0.5,
+      envMap: textureCube, //设置pbr材质环境贴图
+    });
+    textureCube.encoding = THREE.sRGBEncoding;
     let Width = 800
     let Height = 430
     let camera = new PerspectiveCamera(30, Width / Height, 1, 3000)
-    camera.lookAt(0, 0, 0)
+    //相机在Three.js三维坐标系中的位置
+    // 根据需要设置相机位置具体值
+    camera.position.set(200, 200, 200)
+    camera.lookAt(200, 200, 200)
     let loader = new GLTFLoader() /*实例化加载器*/
     let renderer = new WebGLRenderer()
     renderer.setSize(Width, Height)
@@ -54,10 +66,10 @@ export default {
     app.appendChild(renderer.domElement)
     //加载模型
     loader.load(
-      'gltf/1.glb',
+      'gltf/gril.glb',
       function (obj) {
         console.log(obj)
-        obj.scene.position.y = 1
+        obj.scene.position.y = -5
         scene.add(obj.scene)
         // 查看gltf所有颜色贴图的.encoding值
       },
@@ -107,17 +119,24 @@ export default {
     }
 
     const texLoader = new THREE.TextureLoader()
-    const texture = texLoader.load('images/logo.png') // 加载手机mesh另一个颜色贴图
+    const texture = texLoader.load('img/logo.png') // 加载手机mesh另一个颜色贴图
     texture.encoding = THREE.sRGBEncoding //和渲染器.outputEncoding一样值
-    loader.load('gltf/1.glb', function (gltf) {
-      const mesh = gltf.scene.children[0] //获取Mesh
-      mesh.material.map = texture //更换不同风格的颜色贴图
-      console.log(1)
-    })
-
+    // this.meshloader();
     animate()
   },
-
+  methods: {
+    meshloader() {
+      let loader = new GLTFLoader() /*实例化加载器*/
+      const texLoader = new THREE.TextureLoader()
+      const texture = texLoader.load('img/logo.png') // 加载手机mesh另一个颜色贴图
+      texture.encoding = THREE.sRGBEncoding //和渲染器.outputEncoding一样值
+      loader.load('gltf/gril.glb', function (gltf) {
+        const mesh = gltf.scene.children[0] //获取Mesh
+        mesh.material.map = texture //更换不同风格的颜色贴图
+        console.log(1)
+      })
+    },
+  },
 }
 </script>
 
@@ -151,15 +170,16 @@ export default {
       width: 100%;
       height: 70px;
       .mesh-name {
-        // margin: 0 200px;
+        // margin-left: 60px;
         height: 40px;
         width: 400px;
         line-height: 40px;
         display: inline;
+        text-align: center;
         font-size: 20px;
       }
     }
-    .mesh-list{
+    .mesh-list {
       margin: auto;
       text-align: center;
     }
