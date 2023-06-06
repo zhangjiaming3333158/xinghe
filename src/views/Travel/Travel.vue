@@ -7,6 +7,7 @@
           <el-button type="primary" style="width: 100px;height: 40px;">搜索</el-button>
         </el-form-item>
       </el-form>
+      <SearchFix :scrollY="78"></SearchFix>
       <div class="tuijian">推荐旅游</div>
       <div class="left">
         <div class="display_big">
@@ -64,7 +65,9 @@
                 <div class="display_small" style="margin-top: 100px;">
                   <img class="img_small" src="@/views/Travel/img/qianhu.jpg" @mouseover="showzhezhao=false" @mouseleave="showzhezhao=true">
                   <div class="name">千户苗寨</div>
-                  <div class="text_small">千户苗寨，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
+                  <el-tooltip :open-delay="500" class="item" effect="dark" content="千户苗寨，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。" placement="bottom">
+                    <div class="text_small">千户苗寨，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
+                  </el-tooltip>
                 </div>
               </div>
             </el-col>
@@ -136,9 +139,13 @@
 </template>
 
 <script>
+import SearchFix from '@/components/SearchFix.vue'
 const Options = ['1', '2', '3', '4']
 export default {
   name: 'Travel',
+  components: {
+    SearchFix,
+  },
   data() {
     return {
       value: '',
@@ -476,6 +483,10 @@ export default {
               height: 12%;
               color: #000;
               font-size: 20px;
+            }
+            .el-tooltip{
+              width: 100px;
+              height: 23%;
             }
             .text_small {
               width: 100%;

@@ -1,6 +1,6 @@
 <template>
   <div class="nav-container">
-    <el-menu router :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="width: 100%;" background-color="transparent">
+    <el-menu router :default-active="activeIndex?this.$route.path:'\show'" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="width: 100%;" background-color="transparent">
       <img class="logo" src="/img/logo.png" @click="gotohome" alt="">
       <el-menu-item style="width: 500px;cursor: default;" disabled></el-menu-item>
       <el-menu-item index="/">首页</el-menu-item>
@@ -24,7 +24,7 @@ export default {
   name: 'Nav',
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: '',
     }
   },
   methods: {
@@ -32,11 +32,16 @@ export default {
       this.activeIndex = key
     },
     gotohome() {
-      this.$router.push('/')
+      ;(this.activeIndex = '/'), this.$router.push('/')
     },
   },
   mounted() {
-    // console.log(this.$route);
+    // this.activeIndex = this.$route.path
+  },
+  watch: {
+    activeIndex(newVal, oldVal) {
+      // console.log(newVal,oldVal);
+    },
   },
 }
 </script>

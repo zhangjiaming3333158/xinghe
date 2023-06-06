@@ -40,25 +40,29 @@ export default {
   name: 'Custom',
   mounted() {
     let scene = new Scene()
+    //设置背景颜色
+    scene.background = new THREE.Color( 0xf6f6f6 );
+    //设置网格辅助线
+    // scene.add( new THREE.GridHelper( 400, 10 ) );
     // AxesHelper：辅助观察的坐标系
     // const axesHelper = new THREE.AxesHelper(150)
     // scene.add(axesHelper)
     const textureCube = new THREE.CubeTextureLoader()
       .setPath('/img/')
       .load(['background.png'])
-    new THREE.MeshStandardMaterial({
-      metalness: 1.0,
-      roughness: 0.5,
-      envMap: textureCube, //设置pbr材质环境贴图
-    });
-    textureCube.encoding = THREE.sRGBEncoding;
+    // new THREE.MeshStandardMaterial({
+    //   metalness: 1.0,
+    //   roughness: 0.5,
+    //   envMap: textureCube, //设置pbr材质环境贴图
+    // });
+    // textureCube.encoding = THREE.sRGBEncoding;
     let Width = 800
     let Height = 430
-    let camera = new PerspectiveCamera(30, Width / Height, 1, 3000)
+    let camera = new PerspectiveCamera(20, Width / Height, 1, 1000)
     //相机在Three.js三维坐标系中的位置
     // 根据需要设置相机位置具体值
-    camera.position.set(200, 200, 200)
-    camera.lookAt(200, 200, 200)
+    camera.position.set(0, 0, 35)
+    // camera.lookAt(1000, 500, 10000)
     let loader = new GLTFLoader() /*实例化加载器*/
     let renderer = new WebGLRenderer()
     renderer.setSize(Width, Height)
@@ -69,7 +73,7 @@ export default {
       'gltf/gril.glb',
       function (obj) {
         console.log(obj)
-        obj.scene.position.y = -5
+        obj.scene.position.y = -4
         scene.add(obj.scene)
         // 查看gltf所有颜色贴图的.encoding值
       },
@@ -90,6 +94,8 @@ export default {
     controls.enablePan = true
     controls.enableKeys = true
     controls.keyPanSpeed = 7
+    controls.minDistance = 15;
+    controls.maxDistance = 35;
     controls.keys = {
       LEFT: 37,
       UP: 38,
@@ -110,7 +116,7 @@ export default {
     directionalLight.position.set(20, 10, 1305)
     scene.add(directionalLight) //点光源添加到场景中
 
-    camera.position.set(20, 20, 20)
+    
     //渲染场景
     let animate = function () {
       requestAnimationFrame(animate)

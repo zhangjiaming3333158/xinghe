@@ -10,6 +10,7 @@
         </el-form>
       </div>
     </div>
+    <SearchFix :scrollY="78"></SearchFix>
     <div class="name">物品展览馆</div>
     <div class="img">
       <img class="left" src="./img/top1.jpeg" alt="">
@@ -192,9 +193,13 @@
 </template>
 
 <script>
+import SearchFix from '@/components/SearchFix.vue'
 const Options = ['1', '2', '3', '4']
 export default {
   name: 'Show',
+  components: {
+    SearchFix,
+  },
   methods: {
     handleCurrentChange(val) {
       if (val == 1) {
