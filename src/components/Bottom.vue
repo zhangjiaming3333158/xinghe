@@ -13,9 +13,9 @@
         <a href="/sitemap.html"> 网站地图</a>&nbsp;&nbsp;<a href="/bottom/friend"> 相关链接</a>&nbsp;&nbsp;<a href="/bottom/apply_image" target="_blank"> 影像授权</a>&nbsp;&nbsp;<a href="/bottom/privacy/252" target="_blank"> 隐私政策</a>&nbsp;&nbsp; </span><span class="nfc db">
         <a href="/bottom/privacy/236341.html" target="_blank"> 版权声明</a>&nbsp;&nbsp;<a href="/bottom/ask"> 留言板</a>&nbsp;&nbsp;<a href="https://www.dpm.org.cn/singles_detail/252829.html"> 联系我们</a>&nbsp;&nbsp;<a href="/bottom/aboutus.html" target="_blank"> 关于我们</a>&nbsp;&nbsp; </span>
     </div>
-    <div class="bottom_foot">
+    <!-- <div class="bottom_foot">
       &nbsp;&nbsp;京ICP备16044789xx号-1&nbsp;&nbsp;京公网安备11010802014853xx号
-    </div>
+    </div> -->
     <div class="company">
       网站建设：星禾文化传播有限公司
     </div>

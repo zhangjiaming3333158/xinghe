@@ -194,7 +194,7 @@
 
 <script>
 import SearchFix from '@/components/SearchFix.vue'
-const Options = ['1', '2', '3', '4']
+const Options = ['物品']
 export default {
   name: 'Show',
   components: {
@@ -228,7 +228,7 @@ export default {
       input: '',
       showgoods: true,
       checkAll: false,
-      checkedOptions: ['1', '2'],
+      checkedOptions: ['物品'],
       op: Options,
       isIndeterminate: true,
       fenleishow: true, //分类el-card展示

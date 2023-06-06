@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="top_image">
-      <!-- <img src="./img/top.jpeg" alt=""> -->
+      <img src="./img/top.jpeg" alt="">
     </div>
     <div class="box">
       <div class="box-img">
@@ -172,13 +172,11 @@ export default {
     width: 100%;
     height: 400px;
     overflow: hidden;
-    background: url(./img/top.jpeg) no-repeat center center;
+    // background: url(./img/top.jpeg) no-repeat center center;
     img {
-      position: absolute;
-      top: 0px;
       width: 100%;
       height: 800px;
-      background: green;
+      // background: green;
     }
   }
   .box {

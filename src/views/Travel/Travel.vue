@@ -16,7 +16,12 @@
               <img class="img_big" :src="item.url" @mouseover="showzhezhao1=false" @mouseleave="showzhezhao1=true">
               <div class="zhezhao" v-show="showzhezhao1">
                 <div class="name">{{ item.name }}</div>
-                <div class="text">{{ item.text }}</div>
+                <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                  <template slot="content">
+                    <p style="max-width:648px;">{{ item.text }}</p>
+                  </template>
+                  <div class="text">{{ item.text }}</div>
+                </el-tooltip>
               </div>
             </el-carousel-item>
           </el-carousel>
@@ -30,7 +35,12 @@
               <img class="img_big" :src="item.url" @mouseover="showzhezhao2=false" @mouseleave="showzhezhao2=true">
               <div class="zhezhao" v-show="showzhezhao2">
                 <div class="name">{{ item.name }}</div>
-                <div class="text">{{ item.text }}</div>
+                <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                  <template slot="content">
+                    <p style="max-width:648px;">{{ item.text }}</p>
+                  </template>
+                  <div class="text">{{ item.text }}</div>
+                </el-tooltip>
               </div>
             </el-carousel-item>
           </el-carousel>
@@ -65,7 +75,10 @@
                 <div class="display_small" style="margin-top: 100px;">
                   <img class="img_small" src="@/views/Travel/img/qianhu.jpg" @mouseover="showzhezhao=false" @mouseleave="showzhezhao=true">
                   <div class="name">千户苗寨</div>
-                  <el-tooltip :open-delay="500" class="item" effect="dark" content="千户苗寨，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。" placement="bottom">
+                  <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                    <template slot="content">
+                      <p style="max-width:342px;">千户苗寨，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</p>
+                    </template>
                     <div class="text_small">千户苗寨，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。千户苗寨是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
                   </el-tooltip>
                 </div>
@@ -76,7 +89,12 @@
                 <div class="display_small" style="margin-top: 100px;">
                   <img class="img_small" src="@/views/Travel/img/chuanxi.jpg" @mouseover="showzhezhao=false" @mouseleave="showzhezhao=true">
                   <div class="name">川西</div>
-                  <div class="text_small">川西多指四川阿坝州甘孜州等地区。这个地区自然风景优美迷人，九寨沟、黄龙、卧龙自然保护区、四姑娘山、米亚罗风景区、九曲黄河十八弯等风景名胜都位于川西地区，是四川省风景最迷人的一个地区，也是旅游和户外的理想去处。川西坝子，有“小江南”的美称，因其独特的自然地理条件孕育了独特的人文景观和风俗习惯由于四川境内多山地、高原，盆地倒是面积小得多。盆地内丘陵纵横；高原上矗立着巍峨壮观的冰川、雪山。地势跌宕起伏，气候复杂多变。它又地处中国西南腹地，长江上游。是联接中国西南、西北和华中三大地区的天然纽带。东西南北文化在这里交流，长江黄河文明在这里融合。独特的巴蜀文化，神秘古朴的藏、羌、彝风情。数亿年的地质运动，造就了瑰丽险峻的巴蜀风光。独特的人文地理环境，孕育出了丰厚的文化积淀。</div>
+                  <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                    <template slot="content">
+                      <p style="max-width:342px;">川西多指四川阿坝州甘孜州等地区。这个地区自然风景优美迷人，九寨沟、黄龙、卧龙自然保护区、四姑娘山、米亚罗风景区、九曲黄河十八弯等风景名胜都位于川西地区，是四川省风景最迷人的一个地区，也是旅游和户外的理想去处。川西坝子，有“小江南”的美称，因其独特的自然地理条件孕育了独特的人文景观和风俗习惯由于四川境内多山地、高原，盆地倒是面积小得多。盆地内丘陵纵横；高原上矗立着巍峨壮观的冰川、雪山。地势跌宕起伏，气候复杂多变。它又地处中国西南腹地，长江上游。是联接中国西南、西北和华中三大地区的天然纽带。东西南北文化在这里交流，长江黄河文明在这里融合。独特的巴蜀文化，神秘古朴的藏、羌、彝风情。数亿年的地质运动，造就了瑰丽险峻的巴蜀风光。独特的人文地理环境，孕育出了丰厚的文化积淀。</p>
+                    </template>
+                    <div class="text_small">川西多指四川阿坝州甘孜州等地区。这个地区自然风景优美迷人，九寨沟、黄龙、卧龙自然保护区、四姑娘山、米亚罗风景区、九曲黄河十八弯等风景名胜都位于川西地区，是四川省风景最迷人的一个地区，也是旅游和户外的理想去处。川西坝子，有“小江南”的美称，因其独特的自然地理条件孕育了独特的人文景观和风俗习惯由于四川境内多山地、高原，盆地倒是面积小得多。盆地内丘陵纵横；高原上矗立着巍峨壮观的冰川、雪山。地势跌宕起伏，气候复杂多变。它又地处中国西南腹地，长江上游。是联接中国西南、西北和华中三大地区的天然纽带。东西南北文化在这里交流，长江黄河文明在这里融合。独特的巴蜀文化，神秘古朴的藏、羌、彝风情。数亿年的地质运动，造就了瑰丽险峻的巴蜀风光。独特的人文地理环境，孕育出了丰厚的文化积淀。</div>
+                  </el-tooltip>
                 </div>
               </div>
             </el-col>
@@ -85,7 +103,12 @@
                 <div class="display_small" style="margin-top: 100px;">
                   <img class="img_small" src="@/views/Travel/img/xizang.jpg" @mouseover="showzhezhao=false" @mouseleave="showzhezhao=true">
                   <div class="name">西藏</div>
-                  <div class="text_small">西藏坐落于世界上隆起最晚、面积最大、海拔最高的青藏高原的主体区域。地形复杂多样、景象万千，有高峻逶迤的山脉，陡峭深切的沟峡以及冰川、裸石、戈壁等多种地貌类型；有分属寒带、温带、亚热带、热带的种类繁多的奇花异草和珍稀野生动物，还有垂直分布的“一山见四季”、“十里不同天”的自然奇观等。地貌大致可分为喜马拉雅山区，藏南谷地，藏北高原和藏东高山峡谷区，具有瑰丽</div>
+                  <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                    <template slot="content">
+                      <p style="max-width:342px;">西藏坐落于世界上隆起最晚、面积最大、海拔最高的青藏高原的主体区域。地形复杂多样、景象万千，有高峻逶迤的山脉，陡峭深切的沟峡以及冰川、裸石、戈壁等多种地貌类型；有分属寒带、温带、亚热带、热带的种类繁多的奇花异草和珍稀野生动物，还有垂直分布的“一山见四季”、“十里不同天”的自然奇观等。地貌大致可分为喜马拉雅山区，藏南谷地，藏北高原和藏东高山峡谷区，具有瑰丽</p>
+                    </template>
+                    <div class="text_small">西藏坐落于世界上隆起最晚、面积最大、海拔最高的青藏高原的主体区域。地形复杂多样、景象万千，有高峻逶迤的山脉，陡峭深切的沟峡以及冰川、裸石、戈壁等多种地貌类型；有分属寒带、温带、亚热带、热带的种类繁多的奇花异草和珍稀野生动物，还有垂直分布的“一山见四季”、“十里不同天”的自然奇观等。地貌大致可分为喜马拉雅山区，藏南谷地，藏北高原和藏东高山峡谷区，具有瑰丽</div>
+                  </el-tooltip>
                 </div>
               </div>
             </el-col>
@@ -97,7 +120,12 @@
                 <div class="display_small" style="margin-top: 100px;">
                   <img class="img_small" src="@/views/Travel/img/fujian.jpg" @mouseover="showzhezhao=false" @mouseleave="showzhezhao=true">
                   <div class="name">福建土楼</div>
-                  <div class="text_small">福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
+                  <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                    <template slot="content">
+                      <p style="max-width:342px;">福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</p>
+                    </template>
+                    <div class="text_small">福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。福建土楼，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
+                  </el-tooltip>
                 </div>
               </div>
             </el-col>
@@ -106,7 +134,12 @@
                 <div class="display_small" style="margin-top: 100px;">
                   <img class="img_small" src="@/views/Travel/img/yunhe.jpg" @mouseover="showzhezhao=false" @mouseleave="showzhezhao=true">
                   <div class="name">云和</div>
-                  <div class="text_small">云和县，浙江省丽水市下辖县，地处浙江省西南部，云和梯田集旅游休闲、摄影观光、民俗欣赏于一体的云和县首批4A级旅游景区。最早开发于唐初，兴于元、明，距今有1000多年历史，总面积51平方公里。海拔跨度为200米—1400多米，垂直高度1200多米，跨越高山、丘陵、谷地三个地质景观带，最多有700多层，是华东最大的梯田群，被誉为“中国最美梯田”，是中国摄影之乡——丽水的主要采风基地，景区拥有梯田、云海、山村、竹海、溪流、瀑布、雾凇等自然景观，“云雾奇观，浮云世界”是云和梯田的一大特色亮点。有“千层梯田、千米落差、千年历史”之称。现为国家4A级旅游景区。</div>
+                  <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                    <template slot="content">
+                      <p style="max-width:342px;">云和县，浙江省丽水市下辖县，地处浙江省西南部，云和梯田集旅游休闲、摄影观光、民俗欣赏于一体的云和县首批4A级旅游景区。最早开发于唐初，兴于元、明，距今有1000多年历史，总面积51平方公里。海拔跨度为200米—1400多米，垂直高度1200多米，跨越高山、丘陵、谷地三个地质景观带，最多有700多层，是华东最大的梯田群，被誉为“中国最美梯田”，是中国摄影之乡——丽水的主要采风基地，景区拥有梯田、云海、山村、竹海、溪流、瀑布、雾凇等自然景观，“云雾奇观，浮云世界”是云和梯田的一大特色亮点。有“千层梯田、千米落差、千年历史”之称。现为国家4A级旅游景区。</p>
+                    </template>
+                    <div class="text_small">云和县，浙江省丽水市下辖县，地处浙江省西南部，云和梯田集旅游休闲、摄影观光、民俗欣赏于一体的云和县首批4A级旅游景区。最早开发于唐初，兴于元、明，距今有1000多年历史，总面积51平方公里。海拔跨度为200米—1400多米，垂直高度1200多米，跨越高山、丘陵、谷地三个地质景观带，最多有700多层，是华东最大的梯田群，被誉为“中国最美梯田”，是中国摄影之乡——丽水的主要采风基地，景区拥有梯田、云海、山村、竹海、溪流、瀑布、雾凇等自然景观，“云雾奇观，浮云世界”是云和梯田的一大特色亮点。有“千层梯田、千米落差、千年历史”之称。现为国家4A级旅游景区。</div>
+                  </el-tooltip>
                 </div>
               </div>
             </el-col>
@@ -115,7 +148,12 @@
                 <div class="display_small" style="margin-top: 100px;">
                   <img class="img_small" src="@/views/Travel/img/erhai2.jpg" @mouseover="showzhezhao=false" @mouseleave="showzhezhao=true">
                   <div class="name">洱海</div>
-                  <div class="text_small">洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
+                  <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                    <template slot="content">
+                      <p style="max-width:342px;">洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</p>
+                    </template>
+                    <div class="text_small">洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。洱海，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
+                  </el-tooltip>
                 </div>
               </div>
             </el-col>
@@ -126,7 +164,12 @@
                 <div class="display_small" style="margin-top: 100px;">
                   <img class="img_small" src="@/views/Travel/img/guilin2.jpg" @mouseover="showzhezhao=false" @mouseleave="showzhezhao=true">
                   <div class="name">桂林</div>
-                  <div class="text_small">桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
+                  <el-tooltip :open-delay="500" class="item" effect="dark" placement="bottom">
+                    <template slot="content">
+                      <p style="max-width:342px;">桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</p>
+                    </template>
+                    <div class="text_small">桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。桂林，位于贵州省西南部，是中国最大的苗族聚居地，也是中国最具特色的民族风情旅游胜地之一。</div>
+                  </el-tooltip>
                 </div>
               </div>
             </el-col>
@@ -140,7 +183,7 @@
 
 <script>
 import SearchFix from '@/components/SearchFix.vue'
-const Options = ['1', '2', '3', '4']
+const Options = ['旅游']
 export default {
   name: 'Travel',
   components: {
@@ -157,7 +200,7 @@ export default {
       currentPage3: 5,
       currentPage4: 4,
       checkAll: false,
-      checkedOptions: ['1', '2'],
+      checkedOptions: ['旅游'],
       op: Options,
       isIndeterminate: true,
       fenleishow: true, //分类el-card展示
@@ -484,7 +527,7 @@ export default {
               color: #000;
               font-size: 20px;
             }
-            .el-tooltip{
+            .el-tooltip {
               width: 100px;
               height: 23%;
             }

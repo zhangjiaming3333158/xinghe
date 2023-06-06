@@ -5,7 +5,7 @@
         <div>xxxxxxxxxxxxxx</div>
         <div>$</div>
       </div>
-      <div id="webgl" style="margin-left: 320px;"></div>
+      <div id="webgl" style="margin-left: 320px;"></div> 
     </div>
     <div class="bottom">
       <div class="mesh-button">
@@ -41,7 +41,7 @@ export default {
   mounted() {
     let scene = new Scene()
     //设置背景颜色
-    scene.background = new THREE.Color( 0xf6f6f6 );
+    scene.background = new THREE.Color(0xf6f6f6)
     //设置网格辅助线
     // scene.add( new THREE.GridHelper( 400, 10 ) );
     // AxesHelper：辅助观察的坐标系
@@ -64,7 +64,7 @@ export default {
     camera.position.set(0, 0, 35)
     // camera.lookAt(1000, 500, 10000)
     let loader = new GLTFLoader() /*实例化加载器*/
-    let renderer = new WebGLRenderer()
+    let renderer = new WebGLRenderer({ alpha: true })
     renderer.setSize(Width, Height)
     let app = document.getElementById('webgl')
     app.appendChild(renderer.domElement)
@@ -94,8 +94,8 @@ export default {
     controls.enablePan = true
     controls.enableKeys = true
     controls.keyPanSpeed = 7
-    controls.minDistance = 15;
-    controls.maxDistance = 35;
+    controls.minDistance = 15
+    controls.maxDistance = 35
     controls.keys = {
       LEFT: 37,
       UP: 38,
@@ -103,20 +103,40 @@ export default {
       BOTTOM: 40,
     }
     this.controls = controls
-    //添加一个光源
-    // let light = new DirectionalLight(0xffffff) //光源颜色
-    // light.position.set(20, 10, 1305) //光源位置
-    // scene.add(light) //光源添加到场景中
+    //点光源
+    // const pointLight1 = new THREE.PointLight(0xffffff, 1.0)
+    // pointLight1.position.set(0, 0, -100) //点光源位置
+    // scene.add(pointLight1) //点光源添加到场景中
 
-    const pointLight = new THREE.PointLight(0xffffff, 1.0)
-    pointLight.position.set(-400, -200, -300) //点光源位置
-    scene.add(pointLight) //点光源添加到场景中
+    //环境光
+    // const light = new THREE.AmbientLight(0xffffff)
+    // scene.add(light)
 
+    //平行光
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0)
-    directionalLight.position.set(20, 10, 1305)
+    directionalLight.position.set(0,0,200)
     scene.add(directionalLight) //点光源添加到场景中
 
-    
+    //平行光
+    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1.0)
+    directionalLight2.position.set(0, 0, -200)
+    scene.add(directionalLight2) //点光源添加到场景中
+
+    //平行光
+    const directionalLight3 = new THREE.DirectionalLight(0xffffff, 1.0)
+    directionalLight3.position.set(100, 0, 0)
+    scene.add(directionalLight3) //点光源添加到场景中
+
+    //平行光
+    const directionalLight4 = new THREE.DirectionalLight(0xffffff, 1.0)
+    directionalLight4.position.set(-100, 0, 0)
+    scene.add(directionalLight4) //点光源添加到场景中
+
+    //平行光
+    const directionalLight5 = new THREE.DirectionalLight(0xffffff, 1.0)
+    directionalLight5.position.set(-0, 1000, 0)
+    scene.add(directionalLight5) //点光源添加到场景中
+
     //渲染场景
     let animate = function () {
       requestAnimationFrame(animate)
@@ -127,6 +147,7 @@ export default {
     const texLoader = new THREE.TextureLoader()
     const texture = texLoader.load('img/logo.png') // 加载手机mesh另一个颜色贴图
     texture.encoding = THREE.sRGBEncoding //和渲染器.outputEncoding一样值
+
     // this.meshloader();
     animate()
   },
@@ -157,7 +178,7 @@ export default {
     height: 430px;
     background-color: #f6f6f6;
     .name {
-      width: 100%;
+      width: 100px;
       height: 100px;
       position: absolute;
       top: 50px;

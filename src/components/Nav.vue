@@ -1,6 +1,6 @@
 <template>
   <div class="nav-container">
-    <el-menu router :default-active="activeIndex?this.$route.path:'\show'" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="width: 100%;" background-color="transparent">
+    <el-menu router :default-active="activeIndex?this.$route.path:''" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="width: 100%;" background-color="transparent">
       <img class="logo" src="/img/logo.png" @click="gotohome" alt="">
       <el-menu-item style="width: 500px;cursor: default;" disabled></el-menu-item>
       <el-menu-item index="/">首页</el-menu-item>
@@ -12,8 +12,8 @@
       <!-- <el-menu-item index="/show3d">展览3d</el-menu-item> -->
       <el-submenu index="9" style="position: absolute;right: 10px;">
         <template slot="title"><i class="el-icon-user"></i></template>
-        <el-menu-item index="/login" style="color: #000;">登录</el-menu-item>
-        <el-menu-item index="/register" style="color: #000;">注册</el-menu-item>
+        <el-menu-item index="/login" style="color: #000;background-color: #fff;">登录</el-menu-item>
+        <el-menu-item index="/register" style="color: #000;background-color: #fff;">注册</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>
@@ -36,7 +36,7 @@ export default {
     },
   },
   mounted() {
-    // this.activeIndex = this.$route.path
+    this.activeIndex = this.$route.path
   },
   watch: {
     activeIndex(newVal, oldVal) {
@@ -52,6 +52,9 @@ export default {
   .el-menu {
     align-items: center; /* 垂直居中 */
     justify-content: center; /* 水平居中 */
+    .el-menu-item{
+      font-size: 16px;
+    }
     .logo {
       width: 250px;
       height: 50px;
