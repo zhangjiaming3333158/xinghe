@@ -5,7 +5,8 @@
         <div>服饰</div>
         <div>19.9$</div>
       </div>
-      <div id="webgl"></div>
+      <div class="loading-text" ref="loadingText">0%</div>
+      <div ref="webglRef" id="webgl"></div>
     </div>
     <div class="bottom">
       <div class="mesh-button">
@@ -50,6 +51,9 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 // 导入lil.gui库
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js'
 import { onMounted, ref } from 'vue'
+
+const webglRef = ref(null) // 获取dom元素(透明度)
+const loadingText = ref(null) // 获取dom元素(加载进度)
 
 let Width = 800 //窗口宽度
 let Height = 430 //窗口高度
@@ -156,6 +160,13 @@ onMounted(() => {
     },
     function (xhr) {
       console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+      // 设置加载进度
+      loadingText.value.innerText = `${(xhr.loaded / xhr.total) * 100}%`
+      loadingText.value.style.opacity = `${1 - (xhr.loaded / xhr.total) * 100 / 100}`
+      // 设置背景模糊
+      webglRef.value.style.filter = `blur(${
+        100 - (xhr.loaded / xhr.total) * 100
+      }px)`
     },
     function (error) {
       ElMessage.error('load error!' + error)
@@ -254,9 +265,19 @@ onMounted(() => {
       text-align: center;
       line-height: 200%;
     }
+    .loading-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      color: #fff;
+      z-index: 1;
+    }
     #webgl {
       width: 100%;
       position: relative;
+      filter: blur(0px);
     }
   }
   .bottom {
