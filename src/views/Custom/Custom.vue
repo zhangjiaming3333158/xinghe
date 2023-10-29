@@ -50,6 +50,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 // 导入lil.gui库
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js'
+// 导入RGBELoader.js
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js'
 import { onMounted, ref } from 'vue'
 
 const webglRef = ref(null) // 获取dom元素(透明度)
@@ -94,41 +96,31 @@ let eventObj = {
 // renderGui()
 
 const meshloader = () => {
-  let loader = new GLTFLoader() /*实例化加载器*/
-  const texLoader = new THREE.TextureLoader()
-  const texture = texLoader.load('img/logo.png') // 加载手机mesh另一个颜色贴图
-  // texture.encoding = THREE.sRGBEncoding //和渲染器.outputEncoding一样值
-  loader.load('gltf/gril.glb', function (gltf) {
-    const mesh = gltf.scene.children[0] //获取Mesh
-    mesh.material.map = texture //更换不同风格的颜色贴图
-  })
+  // let rgbeLoader = new RGBELoader()
+  // rgbeLoader.load('/img/testhdr.blend', (envMap) => {
+  //   envMap.mapping = THREE.EquirectangularReflectionMapping
+  //   scene.environment = envMap
+  // })
 }
 
-onMounted(() => {
-  // 创建场景
-  let scene = new THREE.Scene()
-  //设置背景颜色
-  scene.background = new THREE.Color(0xf6f6f6)
-
-  //创建相机
-  let camera = new THREE.PerspectiveCamera(
-    20, //视野角度
-    Width / Height, //长宽比
-    1, //近截面
-    1000 //远截面
-  )
-  //设置相机位置
+// 设置相机
+const Setcamera = (camera) => {
+  // 设置相机位置
   camera.position.set(0, 0, 35) //x:右侧为正，y:上侧为正，z:屏幕内为正
   //相机焦点位置
   camera.lookAt(0, 0, 0)
+}
 
-  // 创建渲染器
-  let renderer = new THREE.WebGLRenderer({ alpha: true })
+// 设置渲染器
+const Setrenderer = (renderer) => {
   // 设置渲染器为窗口的内宽度和内高度
   renderer.setSize(Width, Height)
+  // 开启阴影效果
+  renderer.shadowMap.enabled = true
+}
 
-  //加载场景控制插件
-  let controls = new OrbitControls(camera, renderer.domElement)
+// 设置控制器
+const Setcontrols = (controls) => {
   controls.enableDamping = true //是否开启惯性
   controls.dampingFactor = 0.05 //惯性阻尼系数
   controls.enableZoom = true //是否可以缩放
@@ -146,23 +138,41 @@ onMounted(() => {
     RIGHT: 39, //右键
     BOTTOM: 40, //下键
   }
+}
 
-  // loader 实例化加载器
-  let loader = new GLTFLoader()
+// 加载模型
+const loadModel = (loader, scene) => {
   // 加载gltf模型
   loader.load(
     'gltf/gril.glb', //模型路径
     function (obj) {
       console.log(obj)
+      obj.scene.traverse(function (child) {
+        if (child.isMesh) {
+          console.log(child.name);
+        }
+        if(child.isMesh&&child.name==='锥体'){
+          child.material.color = new THREE.Color(0x000000)
+        }
+      })
       obj.scene.position.y = -4
+      // 投射阴影
+      obj.scene.traverse(function (child) {
+        if (child.isMesh) {
+          child.castShadow = true
+          child.receiveShadow = true
+        }
+      })
       scene.add(obj.scene)
       // 查看gltf所有颜色贴图的.encoding值
     },
     function (xhr) {
-      console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+      // console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
       // 设置加载进度
       loadingText.value.innerText = `${(xhr.loaded / xhr.total) * 100}%`
-      loadingText.value.style.opacity = `${1 - (xhr.loaded / xhr.total) * 100 / 100}`
+      loadingText.value.style.opacity = `${
+        1 - ((xhr.loaded / xhr.total) * 100) / 100
+      }`
       // 设置背景模糊
       webglRef.value.style.filter = `blur(${
         100 - (xhr.loaded / xhr.total) * 100
@@ -172,40 +182,82 @@ onMounted(() => {
       ElMessage.error('load error!' + error)
     }
   )
+}
 
+// 创建屏幕
+const createPlane = (scene) => {
+  let planeGeometry = new THREE.PlaneGeometry(50, 50) //平面几何体大小
+  let planeMaterial = new THREE.MeshStandardMaterial(
+    //平面材质
+    {
+      color: 0xf6f6f6, //平面颜色
+      side: THREE.DoubleSide, //平面两面可见
+    }
+  ) //平面材质
+  let plane = new THREE.Mesh(planeGeometry, planeMaterial) //平面网格
+  plane.position.set(0, -5, 0) //平面位置
+  plane.rotation.x = -Math.PI / 2 //平面旋转只渲染上面
+  plane.receiveShadow = true //开启阴影
+  scene.add(plane) //平面添加到场景中
+}
+
+// 添加光源
+const addLight = (scene) => {
   //点光源
-  // const pointLight1 = new THREE.PointLight(0xffffff, 1.0)
-  // pointLight1.position.set(0, 0, -100) //点光源位置
-  // scene.add(pointLight1) //点光源添加到场景中
+  const pointLight1 = new THREE.PointLight(0xffffff, 1.0)
+  pointLight1.position.set(0, 0, -100) //点光源位置
+  scene.add(pointLight1) //点光源添加到场景中
 
   //环境光
-  // const light = new THREE.AmbientLight(0xffffff)
-  // scene.add(light)
+  const light = new THREE.AmbientLight(0xffffff)
+  scene.add(light)
 
-  //平行光
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0)
-  directionalLight.position.set(0, 0, 200)
-  scene.add(directionalLight) //点光源添加到场景中
+  //平行光1
+  const directionalLight1 = new THREE.DirectionalLight(0xf6f6f6, 4)
+  directionalLight1.position.set(0, 2, 4)
+  directionalLight1.castShadow = true //开启阴影
+  scene.add(directionalLight1) //点光源添加到场景中
 
-  //平行光
-  const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1.0)
-  directionalLight2.position.set(0, 0, -200)
-  scene.add(directionalLight2) //点光源添加到场景中
-
-  //平行光
-  const directionalLight3 = new THREE.DirectionalLight(0xffffff, 1.0)
-  directionalLight3.position.set(100, 0, 0)
+  //平行光3
+  const directionalLight3 = new THREE.DirectionalLight(0xf6f6f6, 4)
+  directionalLight3.position.set(0, 2, -4)
+  directionalLight3.castShadow = true //开启阴影
   scene.add(directionalLight3) //点光源添加到场景中
+}
 
-  //平行光
-  const directionalLight4 = new THREE.DirectionalLight(0xffffff, 1.0)
-  directionalLight4.position.set(-100, 0, 0)
-  scene.add(directionalLight4) //点光源添加到场景中
+onMounted(() => {
+  // 创建场景
+  let scene = new THREE.Scene()
+  //设置背景颜色
+  scene.background = new THREE.Color(0xf6f6f6)
 
-  //平行光
-  const directionalLight5 = new THREE.DirectionalLight(0xffffff, 1.0)
-  directionalLight5.position.set(-0, 1000, 0)
-  scene.add(directionalLight5) //点光源添加到场景中
+  //创建相机
+  let camera = new THREE.PerspectiveCamera(
+    20, //视野角度
+    Width / Height, //长宽比
+    1, //近截面
+    1000 //远截面
+  )
+  Setcamera(camera) // 设置相机
+
+  // 创建渲染器
+  let renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
+  Setrenderer(renderer) // 设置渲染器
+
+  //加载场景控制插件
+  let controls = new OrbitControls(camera, renderer.domElement)
+  Setcontrols(controls) // 设置控制器
+
+  // loader 实例化加载器
+  let loader = new GLTFLoader()
+  // 加载gltf模型
+  loadModel(loader, scene)
+
+  // 创建屏幕
+  createPlane(scene)
+
+  // 添加光源
+  addLight(scene)
 
   //渲染场景
   let animate = function () {
