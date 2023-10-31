@@ -602,7 +602,7 @@ export default {
       right: 50px;
       font-size: 20px;
       color: #3982b6;
-      z-index: 999;
+      z-index: 99;
     }
     .more:hover {
       cursor: pointer;
@@ -646,7 +646,7 @@ export default {
         .right_pic {
           margin-left: 10px;
           display: flex;
-          height: 300px;
+          height: 350px;
           .grid-content {
             height: 100%;
             width: 100%;
@@ -692,7 +692,7 @@ export default {
       height: 100%;
       .display_small {
         width: 48%;
-        height: 160px;
+        height: 260px;
         float: left;
         margin-right: 13px;
         .img_small {
@@ -704,6 +704,7 @@ export default {
           font-size: 20px;
         }
         .text_small {
+          height: 100px;
           color: #000;
           font-size: 15px;
           text-indent: 2em;

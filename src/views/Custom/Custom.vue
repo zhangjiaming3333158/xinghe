@@ -4,6 +4,19 @@
       <div class="name">
         <div>服饰</div>
         <div>19.9$</div>
+        <el-select
+          v-model="value"
+          class="m-2"
+          placeholder="Select"
+          size="large"
+        >
+          <el-option
+            v-for="item in meshChildrenName"
+            :key="item[0]"
+            :label="item[0]"
+            :value="item"
+          />
+        </el-select>
       </div>
       <div class="loading-text" ref="loadingText">0%</div>
       <div ref="webglRef" id="webgl"></div>
@@ -19,24 +32,15 @@
         ></el-button>
       </div>
       <div class="mesh-list" ref="mesh">
-        <el-button
-          round
-          style="width: 150px; color: black; font-size: 16px"
-          @click="meshloader"
-          >贴图1</el-button
-        >
-        <el-button round style="width: 150px; color: black; font-size: 16px"
-          >贴图2</el-button
-        >
-        <el-button round style="width: 150px; color: black; font-size: 16px"
-          >贴图3</el-button
-        >
-        <el-button round style="width: 150px; color: black; font-size: 16px"
-          >贴图4</el-button
-        >
-        <el-button round style="width: 150px; color: black; font-size: 16px"
-          >贴图5</el-button
-        >
+        <div v-for="i in 5">
+          <el-button
+            round
+            style="width: 150px; color: black; font-size: 16px"
+            @click="meshloader(i)"
+            >贴图1</el-button
+          >
+          <img class="img" src="/img/background.png"/>
+        </div>
       </div>
     </div>
   </div>
@@ -56,6 +60,9 @@ import { onMounted, ref } from 'vue'
 
 const webglRef = ref(null) // 获取dom元素(透明度)
 const loadingText = ref(null) // 获取dom元素(加载进度)
+
+const meshChildrenName = ref([])
+const value = ref('')
 
 let Width = 800 //窗口宽度
 let Height = 430 //窗口高度
@@ -96,11 +103,8 @@ let eventObj = {
 // renderGui()
 
 const meshloader = () => {
-  // let rgbeLoader = new RGBELoader()
-  // rgbeLoader.load('/img/testhdr.blend', (envMap) => {
-  //   envMap.mapping = THREE.EquirectangularReflectionMapping
-  //   scene.environment = envMap
-  // })
+  console.log(1);
+  value.value[1].map = texture()
 }
 
 // 设置相机
@@ -148,11 +152,14 @@ const loadModel = (loader, scene) => {
     function (obj) {
       console.log(obj)
       obj.scene.traverse(function (child) {
-        if (child.isMesh) {
-          console.log(child.name);
-        }
-        if(child.isMesh&&child.name==='锥体'){
-          child.material.color = new THREE.Color(0x000000)
+        if (
+          child.isMesh &&
+          (child.name === '����11' || child.name === '球体')
+        ) {
+          meshChildrenName.value.push([
+            child.name === '球体' ? '饰品' : '上衣',
+            child.material,
+          ])
         }
       })
       obj.scene.position.y = -4
@@ -191,7 +198,7 @@ const createPlane = (scene) => {
     //平面材质
     {
       color: 0xf6f6f6, //平面颜色
-      side: THREE.DoubleSide, //平面两面可见
+      // side: THREE.DoubleSide, //平面两面可见
     }
   ) //平面材质
   let plane = new THREE.Mesh(planeGeometry, planeMaterial) //平面网格
@@ -223,6 +230,14 @@ const addLight = (scene) => {
   directionalLight3.position.set(0, 2, -4)
   directionalLight3.castShadow = true //开启阴影
   scene.add(directionalLight3) //点光源添加到场景中
+}
+
+//纹理贴图
+const texture = () => {
+  // 纹理贴图
+  let textureLoader = new THREE.TextureLoader()
+  let texture = textureLoader.load('/img/background.png')
+  return texture
 }
 
 onMounted(() => {
@@ -355,8 +370,24 @@ onMounted(() => {
       }
     }
     .mesh-list {
-      height: 70%;
+      margin: 0 auto;
+      height: 300px;
+      width: 70%;
       text-align: center;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .img {
+          margin-top: 20px;
+          width: 150px;
+          height: 50px;
+        }
+      }
     }
   }
 }

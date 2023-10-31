@@ -68,7 +68,8 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #fff;
+  // background-color: #fff;
+  background: rgba(255, 255, 255, 0.7);
   z-index: 999;
   .el-menu {
     align-items: center; /* 垂直居中 */

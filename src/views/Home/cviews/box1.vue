@@ -30,9 +30,10 @@
               src="https://img.dpm.org.cn/Public/static/themes/image/public-icon2.png"
           /></span>
         </h1>
-        <span class="more" style="position: relative; float: right"
+        <span style="position: relative; float: right"
           ><i style="position: absolute; right: 28px">更多</i
           ><img
+            class="morefish"
             style="position: absolute; right: 10px"
             src="https://img.dpm.org.cn/Public/static/themes/image/more.png"
         /></span>
@@ -121,7 +122,7 @@
       <br />
     </div>
     <!-- <div class="box1_img"> -->
-      <img src="../img/box1_1_1_img.png" alt="" class="box1_img" />
+    <img src="../img/box1_1_1_img.png" alt="" class="box1_img" />
     <!-- </div> -->
   </div>
 </template>
@@ -147,6 +148,13 @@
       height: 40px;
       line-height: 25px;
       border-radius: 10px 0 0 0;
+      .morefish {
+        transform: rotate(0deg); /* 初始旋转度数为0 */
+        transition: transform 0.5s; /* 添加过渡效果 */
+        &:hover {
+          transform: rotate(180deg); /* 在悬停时旋转180度 */
+        }
+      }
     }
     .box1_1_1_left_bottom {
       padding: 15px 0 0 50px;
@@ -211,7 +219,7 @@
     flex: 1;
     height: 395px;
     border-radius: 0 10px 10px 0;
-    background: no-repeat center center / cover;;
+    background: no-repeat center center / cover;
   }
 }
 </style>

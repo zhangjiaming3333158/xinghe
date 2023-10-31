@@ -1,19 +1,19 @@
 <template>
   <div class="box1_2_1">
     <div class="box1_2_1_top">
-      <div class="text" style="text-align: center; color: white">
+      <div class="text" style="text-align: center; color: #333">
         <div class="h1" id="date11" style="color: #79b5d6; font-size: 16px">
-          2023 / 4 / 19
+          {{ year }} / {{ month }} / {{ day }}
         </div>
         <div class="h2" id="date22" style="font-size: 30px">在线定制</div>
         <div style="text-align: center; margin-top: 10px; line-height: 20px">
           除法定节假日外，每周一23：00至5：00更新维护<br /><strong
-            style="color: #e8d3a1"
+            style="color: #909252"
             >无需登录即可休验定制 登录后便可购买寄送</strong
           >
         </div>
       </div>
-      <div class="list" style="color: white">
+      <div class="list" style="color: #333">
         <div class="ul flex main-center" style="position: relative">
           <div
             class="li"
@@ -24,6 +24,7 @@
           </div>
           <span style="position: absolute; top: 3px; left: 160px"
             ><img
+              style="background-color: #333"
               v-lazy="
                 'https://img.dpm.org.cn/Public/static/themes/image/png7a.png'
               "
@@ -37,6 +38,7 @@
           </div>
           <span style="position: absolute; top: 3px; left: 300px"
             ><img
+              style="background-color: #333"
               v-lazy="
                 'https://img.dpm.org.cn/Public/static/themes/image/png7a.png'
               "
@@ -83,7 +85,7 @@
               style="width: 54px; height: 67px"
               src="@/views/Home/img/traver.png"
               alt=""
-              class="i"
+              class="i with-border"
             />
           </div>
         </div>
@@ -130,6 +132,11 @@
 
 <script setup>
 const list = ['../img/ThreeD.png']
+const today = new Date() //获取当前时间
+var year = today.getFullYear() //获取年份
+var month = today.getMonth() + 1 //获取月份
+var day = today.getDate() //获取日期
+console.log(year, month, day)
 </script>
 
 <style scoped lang="less">
@@ -146,20 +153,22 @@ const list = ['../img/ThreeD.png']
     height: 200px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    background: url(https://img.dpm.org.cn/Public/static/themes/image/png5.png);
+    background: url(https://img.dpm.org.cn/Public/static/themes/image/2023tea/jpg3.jpg)
+      no-repeat center center / cover;
   }
   .box1_2_1_bottom {
     float: left;
     width: 520px;
     height: 235px;
-    background: url(https://img.dpm.org.cn/Public/static/themes/image/png6.png);
+    background: url(https://img.dpm.org.cn/Public/static/themes/image/2023tea/jpg4.jpg)
+      no-repeat center center / cover;
     .ll {
       float: left;
       box-sizing: border-box;
       padding: 20px;
       width: 240px;
       height: 100%;
-      color: #fff;
+      color: #333;
       border-right: 1px solid #526985;
       .icon {
         position: absolute;
@@ -183,6 +192,17 @@ const list = ['../img/ThreeD.png']
         text-align: center;
         justify-content: center;
         color: #fff;
+        .icon {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          .i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
       }
     }
   }

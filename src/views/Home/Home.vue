@@ -22,7 +22,7 @@
       <div class="box2_2">
         <span class="span_middle">PREVIEW</span>
         <span class="span_middle2">1,071件</span>
-        <img class="img_middle" src="./img/box2_1_middle.jpeg" alt="" />
+        <!-- <img class="img_middle" src="./img/box2_1_middle.jpeg" alt="" /> -->
       </div>
       <div class="box2_3">
         <img class="img_right" src="./img/box2_1_right.jpeg" alt="" />
@@ -54,8 +54,7 @@ const box1_1_2 = ref('./img/box1_1_2.png')
   }
   .img {
     width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
   }
   > .box1 {
     width: 100%;
@@ -87,11 +86,10 @@ const box1_1_2 = ref('./img/box1_1_2.png')
   .box2 {
     margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 445px;
     .box2_1 {
-      float: left;
-      width: 431px;
+      // width: 431px;
       height: 420px;
       border-radius: 10px;
       .box1_1_1_left {
@@ -109,19 +107,11 @@ const box1_1_2 = ref('./img/box1_1_2.png')
     }
     .box2_2 {
       position: relative;
-      float: left;
-      flex: 3;
-      margin-left: 30px;
-      width: 889px;
+      margin: 0 20px;
+      width: 100%;
       height: 420px;
       border-radius: 10px;
-      .img_middle {
-        border-radius: 10px;
-        float: left;
-        margin-right: 30px;
-        width: 653px;
-        height: 420px;
-      }
+      background: url('./img/box2_1_middle.jpeg') no-repeat center center / cover;
       .span_middle {
         position: absolute;
         top: 234px;
