@@ -13,7 +13,7 @@
       <el-menu-item index="/">首页</el-menu-item>
       <el-menu-item index="/show">展览</el-menu-item>
       <el-menu-item index="/custom">定制</el-menu-item>
-      <el-menu-item index="/educate">非遗文化录入</el-menu-item>
+      <!-- <el-menu-item index="/educate">非遗文化录入</el-menu-item> -->
       <el-menu-item index="/educate2">赏析</el-menu-item>
       <el-menu-item index="/travel">旅游</el-menu-item>
       <el-sub-menu

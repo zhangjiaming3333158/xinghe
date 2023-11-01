@@ -1,21 +1,6 @@
 <template>
   <div class="container">
     <div class="Top">
-      <!-- <el-form
-        style="height: 100px; position: absolute; top: 100px; left: 360px"
-      >
-        <el-form-item>
-          <el-input
-            style="padding-left: 104px; display: inline"
-            v-model="input"
-            placeholder="请输入内容"
-          ></el-input>
-          <el-button type="primary" style="width: 100px; height: 40px"
-            >搜索</el-button
-          >
-        </el-form-item>
-      </el-form> -->
-      <!-- <SearchFix :scrollY="78"></SearchFix> -->
       <div class="tuijian">推荐旅游</div>
       <div class="left">
         <div class="display_big">
@@ -446,14 +431,9 @@ export default {
     width: 100%;
     height: 65%;
     display: flex;
-    /deep/ .el-input__inner {
-      width: 430px;
-      height: 40px;
-      line-height: 30px;
-    }
     .tuijian {
       position: absolute;
-      top: 150px;
+      top: 100px;
       left: 50px;
       font-size: 30px;
     }
@@ -462,7 +442,7 @@ export default {
       padding-top: 30px;
       width: 45%;
       height: 100%;
-      margin: 50px 50px 0 50px;
+      margin: 0 50px 0 50px;
       .display_big {
         position: relative;
         width: 100%;
@@ -524,7 +504,6 @@ export default {
       padding-top: 30px;
       width: 45%;
       height: 100%;
-      margin-top: 50px;
       .display_big {
         position: relative;
         width: 100%;

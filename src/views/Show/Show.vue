@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <TopSearch></TopSearch>
-    <SearchFix :scrollY="78"></SearchFix>
+    <!-- <SearchFix :scrollY="78"></SearchFix> -->
     <div class="name">物品展览馆</div>
     <div class="img">
       <img class="left" src="./img/top1.jpeg" alt="" />
@@ -190,13 +190,16 @@
     </div>
     <div class="block">
       <el-pagination
-        @current-change="handleCurrentChange"
-        :current-page.sync="currentPage1"
-        :page-size="16"
+        v-model:current-page="currentPage1"
+        v-model:page-size="pageSize3"
         layout="prev, pager, next, jumper"
         :total="24"
-      >
-      </el-pagination>
+        @current-change="handleCurrentChange"
+      />
+      <!-- @size-change="handleSizeChange" -->
+      <!-- :small="small" -->
+      <!-- :disabled="disabled" -->
+      <!-- :background="background" -->
     </div>
   </div>
 </template>
@@ -236,6 +239,7 @@ export default {
   data() {
     return {
       currentPage1: 1,
+      pageSize3: 16,
       input: '',
       showgoods: true,
       checkAll: false,
@@ -288,7 +292,9 @@ export default {
     }
   }
   .block {
-    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
   }
   .goods {
     width: 100%;

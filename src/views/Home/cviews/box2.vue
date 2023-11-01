@@ -196,12 +196,6 @@ console.log(year, month, day)
           position: relative;
           width: 100%;
           height: 100%;
-          .i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          }
         }
       }
     }
