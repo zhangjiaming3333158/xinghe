@@ -102,6 +102,7 @@ let eventObj = {
 // }
 // renderGui()
 
+// 加载贴图
 const meshloader = () => {
   console.log(1);
   value.value[1].map = texture()

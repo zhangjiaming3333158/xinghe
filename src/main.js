@@ -24,8 +24,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 app.use(router)
 app.use(lazyPlugin, {
-  loading: '@/assets/images/logo.png', // 图片加载时默认图片
-  error: '@/assets/logo.png', // 图片加载失败时默认图片
+  // loading: '/images/logo.png', // 图片加载时默认图片
+  // error: '/images/logo.png', // 图片加载失败时默认图片
   // 还可以有其他配置
 })
 app.mount('#app')

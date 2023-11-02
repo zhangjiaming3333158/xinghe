@@ -136,7 +136,6 @@ const today = new Date() //获取当前时间
 var year = today.getFullYear() //获取年份
 var month = today.getMonth() + 1 //获取月份
 var day = today.getDate() //获取日期
-console.log(year, month, day)
 </script>
 
 <style scoped lang="less">

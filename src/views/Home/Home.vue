@@ -1,11 +1,11 @@
 <template>
   <div class="home-container">
-    <img :src='background' alt="" class="img" />
+    <img :src="background" alt="" class="img" />
     <div class="box1 w">
       <div class="box1_1">
         <Box1></Box1>
         <div>
-          <img class="box1_1_2" src='./img/box1_1_2.png' alt="" />
+          <Depmap></Depmap>
         </div>
       </div>
       <div class="box1_2">
@@ -40,6 +40,7 @@ import Box3 from './cviews/box3.vue'
 import Box4 from './cviews/box4.vue'
 import Box5 from './cviews/box5.vue'
 import Box6 from './cviews/box6.vue'
+import Depmap from './cviews/depmap.vue'
 const background = ref('./img/background.png')
 const box1_1_2 = ref('./img/box1_1_2.png')
 </script>
@@ -68,12 +69,6 @@ const box1_1_2 = ref('./img/box1_1_2.png')
       flex-direction: column;
       width: 60%;
       height: auto;
-      .box1_1_2 {
-        margin-top: -20px;
-        width: 100%;
-        height: 390px;
-        border-radius: 10px;
-      }
     }
     .box1_2 {
       display: flex;
@@ -111,7 +106,8 @@ const box1_1_2 = ref('./img/box1_1_2.png')
       width: 100%;
       height: 420px;
       border-radius: 10px;
-      background: url('./img/box2_1_middle.jpeg') no-repeat center center / cover;
+      background: url('./img/box2_1_middle.jpeg') no-repeat center center /
+        cover;
       .span_middle {
         position: absolute;
         top: 234px;
